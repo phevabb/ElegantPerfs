@@ -3,7 +3,16 @@
 <section class="section-content padding-y bg">
   <div class="container">
     <!-- ============================ COMPONENT 1 ================================= -->
+   {% if not cart_items %}
 
+    <h2 class = 'text-center'>Your Shopping Cart is Empty.</h2>
+    <br>
+    <div class = 'text-center'>
+      <a href="{% url 'store' %}" class="btn btn-primary">Continue Shopping</a>
+
+    </div>
+
+   {% else %}
     <div class="row">
       <aside class="col-lg-9">
         <div class="card">
@@ -13,7 +22,6 @@
                 <th scope="col">Product</th>
                 <th scope="col" width="120">Quantity</th>
                 <th scope="col" width="120">Price</th>
-                <th scope="col" class="text-right" width="200"></th>
               </tr>
             </thead>
             <tbody>
@@ -26,12 +34,20 @@
                       <img
                         src="{{cart_item.product.images.url}}"
                         class="img-sm"
+                        style="
+                          max-width: 100%;
+                          height: auto;
+                          display: block;
+                          margin: 0 auto;
+                        "
                       />
                     </div>
+
                     <figcaption class="info">
-                      <a href="#" class="title text-dark"
+                      <a href="{{cart_item.product.get_url }}" class="title text-dark"
                         >{{cart_item.product.product_name}}</a
                       >
+
                       <p class="text-muted small">
                         Colour: 25 Mpx <br />
                         Brand: Canon
@@ -44,7 +60,12 @@
                   <div class="col">
                     <div class="input-group input-spinner">
                       <div class="input-group-prepend">
-                        <a class="btn btn-light" type="button" id="button-plus">
+                        <a
+                          href="{% url 'remove_cart' cart_item.product.id %} "
+                          class="btn btn-light"
+                          type="button"
+                          id="button-plus"
+                        >
                           <i class="fa fa-minus"></i>
                         </a>
                       </div>
@@ -75,12 +96,15 @@
                     <var class="price">GH₵{{cart_item.sub_total}}</var>
                     <small class="text-muted">
                       GH₵{{cart_item.product.price}} each
+                      <a
+                        href="{% url 'remove_cart_item' cart_item.product.id %}"
+                        class="btn btn-danger"
+                      >
+                        Remove</a
+                      >
                     </small>
                   </div>
                   <!-- price-wrap .// -->
-                </td>
-                <td class="text-right">
-                  <a href="" class="btn btn-danger"> Remove</a>
                 </td>
               </tr>
 
@@ -118,7 +142,7 @@
             <a href="./place-order.html" class="btn btn-primary btn-block">
               Checkout
             </a>
-            <a href="./store.html" class="btn btn-light btn-block"
+            <a href="{% url 'store' %}" class="btn btn-light btn-block"
               >Continue Shopping</a
             >
           </div>
@@ -128,6 +152,8 @@
       </aside>
       <!-- col.// -->
     </div>
+    {% endif %}
+
     <!-- row.// -->
     <!-- ============================ COMPONENT 1 END .// ================================= -->
   </div>
