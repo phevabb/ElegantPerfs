@@ -27,7 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+JAZZMIN_SETTINGS = {
 
+    "site_logo": "AdminLogo.png",
+    "site_logo_classes": "img-circle",
+
+
+}
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'category',
     'store',
+    'carts',
 
 ]
 
@@ -127,6 +134,8 @@ STATICFILES_DIRS = [
 
 ]
 
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 
@@ -135,3 +144,9 @@ MEDIA_ROOT = BASE_DIR /'media'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+
+
