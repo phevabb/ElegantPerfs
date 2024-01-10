@@ -151,7 +151,26 @@
           <main class="col-md-9">
             <header class="border-bottom mb-4 pb-3">
               <div class="form-inline">
+
+                {% if product_count > 1 %}
+
                 <span class="mr-md-auto">found <b>{{product_count}}</b> items </span>
+
+
+                {% elif product_count == 1  %}
+
+                <span class="mr-md-auto"> 1 item found </span>
+                
+
+                {% else %}
+
+                <span class="mr-md-auto">no item found </span>
+
+                
+
+
+
+                {% endif %}
               </div>
             </header>
             <!-- sect-heading -->
