@@ -5,7 +5,14 @@
 <!-- ========================= SECTION PAGETOP ========================= -->
     <section class="section-pagetop bg">
       <div class="container">
-        <h2 class="title-page">Our Store</h2>
+        {% if 'search' in request.path %}
+         <h2 class="title-page">Search Result</h2>
+
+
+        {% else %}
+          <h2 class="title-page">Our Store</h2>
+
+        {% endif %}
       </div>
       <!-- container //  -->
     </section>
@@ -176,6 +183,7 @@
             <!-- sect-heading -->
 
             <div class="row">
+              {% if products %}
 
               {% for product in products  %}
 
@@ -206,6 +214,19 @@
               </div>
               <!-- col.// -->
               {% endfor %}
+              {% else %}
+              
+
+                  <div style="text-align: center; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                      <h2><em>No Result Found. </em>😞</h2>
+                  </div>
+
+
+
+              {% endif %}
+
+
+               
 
               
             </div>
