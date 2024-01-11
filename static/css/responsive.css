@@ -21,9 +21,9 @@
     display: none;
   }
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 1700px) {
   /* mobile devices */
-  .mobile-block {
+  .mobile-block { 
     display: block;
   }
 

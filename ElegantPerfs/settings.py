@@ -38,6 +38,7 @@ JAZZMIN_SETTINGS = {
 
 INSTALLED_APPS = [
     'jazzmin',
+    'djmoney',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
