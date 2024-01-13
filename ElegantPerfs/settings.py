@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'category',
     'store',
     'carts',
+    'accounts',
 
 ]
 
@@ -60,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'ElegantPerfs.urls'
 
@@ -82,6 +85,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ElegantPerfs.wsgi.application'
+
+AUTH_USER_MODEL = 'accounts.Account'
 
 
 # Database
