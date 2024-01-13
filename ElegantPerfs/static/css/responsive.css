@@ -22,9 +22,30 @@
   }
 }
 @media all and (max-width: 768px) {
+
+
+
   /* mobile devices */
   .mobile-block {
     display: contents;
+  }
+
+
+  .form-control{
+
+    padding: 5px;
+      /* Adjust padding as needed */
+    line-height: 1.5;
+
+    width: 100%;
+
+  }
+
+
+  .form-control-mail{
+
+    width: 100%;
+
   }
 
   .table-shopping-cart .itemside .aside {

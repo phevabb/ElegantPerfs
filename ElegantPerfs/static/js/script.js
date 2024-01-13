@@ -58,3 +58,11 @@ $(document).ready(function() {
 }); 
 // jquery end
 
+        $(document).ready(function() {
+            // Use setTimeout to delay the fadeOut
+            setTimeout(function() {
+                // Use the correct selector '#message' for an element with id 'message'
+                $('#message').fadeOut('slow');
+            }, 1000);
+        });
+ 

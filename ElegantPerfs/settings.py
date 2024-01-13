@@ -37,6 +37,8 @@ JAZZMIN_SETTINGS = {
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
+    
     'jazzmin',
     'djmoney',
     'django.contrib.admin',
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'store',
     'carts',
     'accounts',
+    'phonenumber_field',
 
 ]
 
@@ -157,3 +160,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+  
+}
