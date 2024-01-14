@@ -28,6 +28,9 @@
 
           {% for product in products  %}
 
+
+        
+
           <div class="col-md-3">
             <div class="card card-product-grid">
               <a href="{{product.get_url}}" class="img-wrap">
@@ -45,7 +48,8 @@
                     <a href="{{ product.get_url }}" class="btn btn-block btn-primary">View Detail
                     </a>
                   </figcaption>            </div>
-          </div>       
+          </div>
+          
           <!-- col.// -->
           {% endfor %}
 

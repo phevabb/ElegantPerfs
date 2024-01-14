@@ -63,6 +63,6 @@ $(document).ready(function() {
             setTimeout(function() {
                 // Use the correct selector '#message' for an element with id 'message'
                 $('#message').fadeOut('slow');
-            }, 1000);
+            }, 4000);
         });
  
